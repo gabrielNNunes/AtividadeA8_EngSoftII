@@ -100,6 +100,35 @@ public class EmpregadoTerceirizadoTest {
 		}
 		Assertions.assertEquals("O número de horas trabalhadas por funcionários próprios deve ser menor ou igual a 40.",mensagemErro);
 	}
+//=======================================================================================================SetValorPorHora
+	@Test
+	public void TesteSetValorPorHoraEmpregadoTerceirizado() throws Exception {
+		empregadoTerceirizado.setValorPorHora(45.0);
+		Assertions.assertEquals(45.0,empregadoTerceirizado.getValorPorHora());
+	}
+//=======================================================================================================SetValorPorHora
+	@Test
+	public void TesteSetValorPorHoraEmpregadoTerceirizadoMaisQue200() {
+		String mensagemErro = "";
+		try {
+			empregadoTerceirizado.setValorPorHora(250.0);
+		}catch (Exception e) {
+			mensagemErro =  e.getMessage();
+		}		
+		Assertions.assertEquals("O Valor por hora deve ser de 30 a 200",mensagemErro);
+	}
+//=======================================================================================================SetValorPorHora
+	@Test
+	public void TesteSetValorPorHoraEmpregadoTerceirizadoMenorQue30() {
+		String mensagemErro = "";
+		try {
+			empregadoTerceirizado.setValorPorHora(25.0);
+		}catch (Exception e) {
+			mensagemErro =  e.getMessage();
+		}
+		
+		Assertions.assertEquals("O Valor por hora deve ser de 30 a 200",mensagemErro);
+	}
 //=======================================================================================================
 
   
