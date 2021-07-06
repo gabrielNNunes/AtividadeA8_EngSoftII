@@ -14,7 +14,7 @@ public class EmpregadoTerceirizadoTest {
 	private void instanciarObjetos() {		
 		empregadoTerceirizado = new EmpregadoTerceirizado("Gabriel Nunes");
 	}
-  //=======================================================================================================RealizarPagamento
+ //=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoMaiorQue1100() throws Exception {
 		EmpregadoTerceirizado empreTer = new EmpregadoTerceirizado("Teste");
@@ -129,12 +129,35 @@ public class EmpregadoTerceirizadoTest {
 		
 		Assertions.assertEquals("O Valor por hora deve ser de 30 a 200",mensagemErro);
 	}
-//=======================================================================================================
-
-  
-  
-  
-  
-  
-  
+//=======================================================================================================SetAdicional
+	@Test
+	public void TesteSetAdicionalEmpregadoTerceirizado() throws Exception {		
+			empregadoTerceirizado.setAdicional(150.0);			
+		Assertions.assertEquals(150.0,empregadoTerceirizado.getAdicional());
+	}
+//=======================================================================================================SetAdicional
+		@Test
+		public void TesteSetAdicionalEmpregadoTerceirizadoMaiorQue1100() {
+			String mensagemErro = "";
+			try {
+				empregadoTerceirizado.setAdicional(150.0);
+			}catch (Exception e) {
+				mensagemErro =  e.getMessage();
+			}
+			
+			Assertions.assertEquals("O adicional deve ser de 100 a 1100",mensagemErro);
+		}
+//=======================================================================================================SetAdicional	
+		@Test
+		public void TesteSetAdicionalEmpregadoTerceirizadoMenorQue100() {
+			String mensagemErro = "";
+			try {
+				empregadoTerceirizado.setAdicional(150.0);
+			}catch (Exception e) {
+				mensagemErro =  e.getMessage();
+			}
+			
+			Assertions.assertEquals("O adicional deve ser de 100 a 1100",mensagemErro);
+		}	
+//=======================================================================================================	
 }
