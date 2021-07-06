@@ -67,7 +67,7 @@ public int getHoras() {
 
 
 	public void setAdicional(Double adicional) throws Exception {
-		if(adicional<100.0 && adicional > 1100.0){
+		if(adicional<100.0 || adicional > 1100.0){
 			throw new Exception("O adicional deve ser de 100 a 1100");			
 		}
 		this.adicional = adicional;
