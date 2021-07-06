@@ -14,7 +14,7 @@ public class EmpregadoTerceirizadoTest {
 	private void instanciarObjetos() {		
 		empregadoTerceirizado = new EmpregadoTerceirizado("Gabriel Nunes");
 	}
-  //=======================================================================================================
+  //=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoMaiorQue1100() throws Exception {
 		EmpregadoTerceirizado empreTer = new EmpregadoTerceirizado("Teste");
@@ -23,7 +23,7 @@ public class EmpregadoTerceirizadoTest {
 		empreTer.setAdicional(200.0);
 		Assertions.assertEquals(1700.00,empreTer.realizarPagamento());
 	}
-//=======================================================================================================	
+//=======================================================================================================RealizarPagamento	
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoMenorQue1100() throws Exception{
 		empregadoTerceirizado.setValorPorHora(30.0);
@@ -31,7 +31,7 @@ public class EmpregadoTerceirizadoTest {
 		empregadoTerceirizado.setAdicional(100.00);
 		Assertions.assertEquals(1100.00,empregadoTerceirizado.realizarPagamento());
 	}
-//=======================================================================================================
+//=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoIgualA1100() throws Exception{
 		empregadoTerceirizado.setValorPorHora(100.0);
@@ -39,7 +39,7 @@ public class EmpregadoTerceirizadoTest {
 		empregadoTerceirizado.setAdicional(100.00);
 		Assertions.assertEquals(1100.00,empregadoTerceirizado.realizarPagamento());
 	}
-//=======================================================================================================
+//=======================================================================================================RealizarPagamento
 
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoValorPorHoraIgualA0(){
@@ -55,7 +55,7 @@ public class EmpregadoTerceirizadoTest {
 		}
 		Assertions.assertEquals("O valor por hora deve ser maior que 0",mensagemErro);
 	}
-//=======================================================================================================
+//=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoHoraIgualA0(){
 		String mensagemErro = "";
@@ -69,7 +69,7 @@ public class EmpregadoTerceirizadoTest {
 		}
 		Assertions.assertEquals("A quantidade de horas deve ser maior que 0",mensagemErro);
 	}
-//=======================================================================================================
+//=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoTerceirizadoAdicionalIgualA0(){
 		String mensagemErro = "";
@@ -83,7 +83,24 @@ public class EmpregadoTerceirizadoTest {
 		}
 		Assertions.assertEquals("O adicional deve ser maior que 0",mensagemErro);
 		}
-//=======================================================================================================		
+//=======================================================================================================SetHoras		
+	@Test
+	public void TesteSetHorasEmpregadoTerceirizado() throws Exception {
+		empregadoTerceirizado.setHoras(30);
+		Assertions.assertEquals(30,empregadoTerceirizado.getHoras());
+	}
+//=======================================================================================================SetHoras	
+	@Test
+	public void TesteSetHorasEmpregadoTerceirizadoMaiorQue40() {
+		String mensagemErro = "";
+		try {
+		empregadoTerceirizado.setHoras(45);
+		}catch (Exception e) {
+			mensagemErro =  e.getMessage();
+		}
+		Assertions.assertEquals("O número de horas trabalhadas por funcionários próprios deve ser menor ou igual a 40.",mensagemErro);
+	}
+//=======================================================================================================
 
   
   
