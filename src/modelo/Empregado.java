@@ -1,6 +1,6 @@
 package modelo;
 
-public class Empregado extends ModeloEmpregado{
+public class Empregado{
   String nome;
 	int horas;
 	Double valorPorHora;
