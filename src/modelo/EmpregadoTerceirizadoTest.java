@@ -140,7 +140,7 @@ public class EmpregadoTerceirizadoTest {
 		public void TesteSetAdicionalEmpregadoTerceirizadoMaiorQue1100() {
 			String mensagemErro = "";
 			try {
-				empregadoTerceirizado.setAdicional(150.0);
+				empregadoTerceirizado.setAdicional(1500.0);
 			}catch (Exception e) {
 				mensagemErro =  e.getMessage();
 			}
@@ -152,7 +152,7 @@ public class EmpregadoTerceirizadoTest {
 		public void TesteSetAdicionalEmpregadoTerceirizadoMenorQue100() {
 			String mensagemErro = "";
 			try {
-				empregadoTerceirizado.setAdicional(150.0);
+				empregadoTerceirizado.setAdicional(90.0);
 			}catch (Exception e) {
 				mensagemErro =  e.getMessage();
 			}
