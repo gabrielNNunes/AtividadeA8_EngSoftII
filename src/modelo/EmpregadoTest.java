@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 
 
-public class TesteEmpregado {
+public class EmpregadoTest {
     ModeloEmpregado empregado;	
 	
     @BeforeEach
