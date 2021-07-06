@@ -8,17 +8,17 @@ import org.junit.jupiter.api.Test;
 
 
 public class EmpregadoTest {
-    ModeloEmpregado empregado;	
+    Empregado empregado;	
 	
     @BeforeEach
     private void instanciarObjetos() {
-      empregado = new Empregados("Gabriel Nunes");
+      empregado = new Empregado("Gabriel Nunes");
     }
   
 //=======================================================================================================RealizarPagamento	
   	@Test
 	public void realizarPagamentoEmpregadoMaiorQue1100() throws Exception {
-		ModeloEmpregado empre = new Empregados("Teste");
+		Empregado empre = new Empregado("Teste");
 		empre.setValorPorHora(150.0);
 		empre.setHoras(10);
 		Assertions.assertEquals(1500.00,empre.realizarPagamento());
@@ -26,7 +26,7 @@ public class EmpregadoTest {
 //=======================================================================================================RealizarPagamento	
 	@Test
 	public void realizarPagamentoEmpregadoMenorQue1100() throws Exception{
-		ModeloEmpregado empre = new Empregados("Teste");
+		Empregado empre = new Empregado("Teste");
 		empre.setValorPorHora(30.0);
 		empre.setHoras(10);
 		
@@ -35,7 +35,7 @@ public class EmpregadoTest {
 //=======================================================================================================RealizarPagamento
 	@Test
 	public void realizarPagamentoEmpregadoIgualA1100() throws Exception{
-		ModeloEmpregado empre = new Empregados("Teste");
+		Empregado empre = new Empregado("Teste");
 		empre.setValorPorHora(100.0);
 		empre.setHoras(11);
 		
@@ -46,7 +46,7 @@ public class EmpregadoTest {
 	public void realizarPagamentoEmpregadoValorPorHoraIgualA0(){
 		String mensagemErro = "";
 		try {
-		ModeloEmpregado empre = new Empregados("Teste");
+		Empregado empre = new Empregado("Teste");
 		empre.setHoras(30);
 		empre.realizarPagamento();
 		}catch (Exception e) {
@@ -59,7 +59,7 @@ public class EmpregadoTest {
 	public void realizarPagamentoEmpregadoHoraIgualA0(){
 		String mensagemErro = "";
 		try {
-		ModeloEmpregado empre = new Empregados("Teste");
+		Empregado empre = new Empregado("Teste");
 		empre.setValorPorHora(30.0);
 		empre.realizarPagamento();
 		}catch (Exception e) {
